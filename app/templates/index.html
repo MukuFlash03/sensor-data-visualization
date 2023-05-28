@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ark Biotech Web Dashboard</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="{{ url_for('static', filename='js/index.js') }}" type="module"></script>
+</head>
+
+<body>
+
+  <div class="plot-app">
+    <div class="plot-buttons">
+        <button id="refresh" class="refresh">Refresh Data</button>
+        <button id="download" class="download">Download CSV</button>
+    </div>
+
+    <div class="plot-time-input">
+      <label for="start-time">Start Time:</label>
+      <input type="datetime-local" id="start-time" name="start-time">
+      <label for="end-time">End Time:</label>
+      <input type="datetime-local" id="end-time" name="end-time">
+    </div>
+
+    <div id="plot-area" class="plot-area">
+      {{ plot|safe }}
+    </div>
+  </div>
+
+</body>
+</html>

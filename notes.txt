@@ -1,0 +1,83 @@
+
+
+1. Checking PostgreSQL DB setup
+
+- Sign in as DB root admin
+    $ sudo -u postgres psql
+- Check users
+    $ \du
+- Check DBs
+    $ \l
+
+
+2. Creating DB for Project
+
+- Sign out, exit to terminal
+- Create DB
+    $ createdb arkbiotech -O mukuflash
+- Sign in as DB root admin
+    $ sudo -u postgres psql
+- Assign Privileges to DB for user 
+    $ GRANT ALL PRIVILEGES ON DATABASE arkbiotech TO mukuflash;
+
+  
+
+3. What to do with Dockerfile and compose.yaml
+
+- ChatGPT says to build and run container using:
+    $ docker compose up
+- Docker Engine, Docker CLI, Docker Compose Plugin must already be installed for this command to run successfully.
+- Working in MacOS VSCode; wasn't configured correctly on my Linux laptop.
+
+
+4. Entry Points
+- https://www.youtube.com/watch?v=0W0k6zP_Lto
+
+$ pip3 install -e /Users/mukuflash/Documents/ArkBiotech/webdash/
+
+Then run commands defined in setup.py:
+$ run-app
+$ webdash-run
+
+5. This was working in local environment but not inside Docker container.
+For some reason, using ChatGPT's sample file which was similar to my setup.py worked.
+Difference was that all packages and folders had same name, I guess.
+
+6. Docker cache wasn't being cleared.
+Used three commands in succession to clean, rebuild Docker containers.
+$ docker compose build; docker compose down; docker compose up
+
+
+7. Set up a Basic Flask server (hello world)
+Working great.
+
+8. Connection to DB inside Docker container
+- Needed to establish or test whether connection existed between the two docker containers (app, Postgres)
+
+
+9. Which plotting library to use
+Matplotlib, plotly, dash, streamline
+
+
+
+10. Download CSV button
+
+
+11. Refresh data button
+
+https://realpython.com/flask-javascript-frontend-for-rest-api/
+https://stackoverflow.com/questions/21566649/flask-button-run-python-without-refreshing-page 
+https://www.geeksforgeeks.org/flask-form-submission-without-page-reload/
+https://www.youtube.com/watch?v=ATEGpAb8GWI
+
+
+
+  <div class="buttons-div">
+    <form class="buttons-form">
+      <button id="refresh" class="refresh">Refresh Data</button>
+      <button onclick="downloadCSV()">Download CSV</button>
+    </form>  
+  </div>
+
+
+

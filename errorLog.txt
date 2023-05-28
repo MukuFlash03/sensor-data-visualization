@@ -1,0 +1,54 @@
+1. Not able to complete docker image build process
+    ERROR: Directory '.' is not installable. Neither 'setup.py' nor 'pyproject.toml' found.
+- https://carpentries-incubator.github.io/python_packaging/03-building-and-installing.html
+
+Soln: Need to setup entry points, build code package:
+- https://www.youtube.com/watch?v=0W0k6zP_Lto
+
+2. Failed to solve: error from sender: open /pgdata/pgdata: permission denied
+- Change permissions.
+- No need to change; working perfectly in MacOS VSCode Docker.
+
+3. Is the docker daemon running?
+Error: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. 
+
+$ docker info
+$ open /Applications/Docker.app
+
+
+4. App container exited: No module named instructions
+
+- Removed instructions package from path hierarchy in setup.py while defining commands
+- Need to remove webapp as well since package is already defined to be "webapp" when using find_packages('webapp')
+
+
+5. Many errors while setting up Docker for web app.
+
+Exposing port to internet from within inside Docker; But this is already done in compose.yaml
+Needed to connect the two Docker containers
+
+
+Had to add few packages to Dockerfile: libpq-dev gcc
+
+6. Table names -> '/' not allowed.
+Had to use '''query "names with illegal chars" '''
+
+
+7. Template not found
+- index.html must be present inside templates folder which is a directory inside root directory of flask app, i.e. directory containing app.py
+
+
+https://www.pythonanywhere.com/forums/topic/29069/
+https://stackoverflow.com/a/73744194
+
+Need to add template_folder when creating flask app in Python script.
+
+
+8. CSS style not being loaded
+"GET /root/take_home_project/app/static/style.css HTTP/1.1" 404 -
+
+https://stackoverflow.com/a/58403380
+
+Same issue as #7.
+Need to add static_folder when creating flask app in Python script.
+
