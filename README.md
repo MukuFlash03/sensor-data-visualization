@@ -5,7 +5,7 @@ This app visualizes data coming from the back-end database.
 
 The following four data plots w.r.t. time are shown: Temperature, pH, Distilled Oxygen, and Pressure.
 
-![Dashboard View] (./dashboard.png) 
+![Dashboard View](./dashboard.png) 
 
 Additional features
 
