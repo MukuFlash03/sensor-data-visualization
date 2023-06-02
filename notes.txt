@@ -1,3 +1,12 @@
+Execution Command for Docker App: 
+$ docker compose build; docker compose down; docker compose up
+
+Error: 
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+
+Solution:
+Open Docker Desktop app.
+
 
 
 1. Checking PostgreSQL DB setup
@@ -14,11 +23,11 @@
 
 - Sign out, exit to terminal
 - Create DB
-    $ createdb arkbiotech -O mukuflash
+    $ createdb abc -O mukuflash
 - Sign in as DB root admin
     $ sudo -u postgres psql
 - Assign Privileges to DB for user 
-    $ GRANT ALL PRIVILEGES ON DATABASE arkbiotech TO mukuflash;
+    $ GRANT ALL PRIVILEGES ON DATABASE abc TO mukuflash;
 
   
 
@@ -33,7 +42,7 @@
 4. Entry Points
 - https://www.youtube.com/watch?v=0W0k6zP_Lto
 
-$ pip3 install -e /Users/mukuflash/Documents/ArkBiotech/webdash/
+$ pip3 install -e /Users/mukuflash/Documents/abc/webdash/
 
 Then run commands defined in setup.py:
 $ run-app

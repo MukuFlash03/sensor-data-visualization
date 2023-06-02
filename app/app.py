@@ -49,7 +49,7 @@ def download_csv():
     
     # Create a response object with the CSV data and set the headers
     response = make_response(csv_string) 
-    response.headers['Content-Disposition'] = 'attachment; filename=ArkPlots.csv'
+    response.headers['Content-Disposition'] = 'attachment; filename=Plots.csv'
     response.headers['Content-Type'] = 'text/csv'
 
     return response
